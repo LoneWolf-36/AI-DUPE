@@ -216,8 +216,7 @@ GameObject:
   - component: {fileID: 97677140}
   - component: {fileID: 97677138}
   - component: {fileID: 97677142}
-  - component: {fileID: 97677137}
-  - component: {fileID: 97677139}
+  - component: {fileID: 97677143}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -225,20 +224,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &97677137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97677136}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f431c5950974fc4ab0293b9c95a67be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resWidth: 256
-  resHeight: 256
 --- !u!124 &97677138
 Behaviour:
   m_ObjectHideFlags: 0
@@ -246,21 +231,7 @@ Behaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97677136}
-  m_Enabled: 1
---- !u!114 &97677139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97677136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99060ace9fadec94f9950f496f0527a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resWidth: 256
-  resHeight: 256
+  m_Enabled: 0
 --- !u!20 &97677140
 Camera:
   m_ObjectHideFlags: 0
@@ -334,6 +305,22 @@ MonoBehaviour:
   target: {fileID: 1270537201}
   translateSpeed: 10
   rotationSpeed: 10
+--- !u!114 &97677143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97677136}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99060ace9fadec94f9950f496f0527a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 883712362}
+  Rb: {fileID: 883712363}
+  resWidth: 256
+  resHeight: 256
 --- !u!1 &145596153
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +393,7 @@ GameObject:
   - component: {fileID: 176006873}
   - component: {fileID: 176006875}
   - component: {fileID: 176006874}
+  - component: {fileID: 176006876}
   m_Layer: 0
   m_Name: FP Camera
   m_TagString: Untagged
@@ -478,6 +466,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &176006876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176006872}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842794b69f42fd8428c2ada063b51e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resWidth: 256
+  resHeight: 256
 --- !u!1001 &206191599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,6 +728,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289328962423014, guid: fb0b25f26d24e164ba70cdc1d4a7b35e, type: 3}
+      propertyPath: m_Name
+      value: CAR
+      objectReference: {fileID: 0}
     - target: {fileID: 4323917520585024, guid: fb0b25f26d24e164ba70cdc1d4a7b35e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -100.4
@@ -978,7 +984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   verticalInput: 0
-  currentSteerAngle: 0
   currentbreakForce: 0
   isBreaking: 0
   motorForce: 1500
@@ -992,6 +997,20 @@ MonoBehaviour:
   frontRightWheeTransform: {fileID: 533037918}
   rearLeftWheelTransform: {fileID: 650218110}
   rearRightWheelTransform: {fileID: 1103788419}
+--- !u!114 &883712365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883712362}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c2b46ca12313c4198c0e1dc225847e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 883712362}
+  RB: {fileID: 883712363}
 --- !u!4 &1103788419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4308875204043824, guid: fb0b25f26d24e164ba70cdc1d4a7b35e,

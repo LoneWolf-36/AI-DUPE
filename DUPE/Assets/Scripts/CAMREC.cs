@@ -10,7 +10,8 @@ public class CAMREC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GetComponent<Camera>();    
+        cam = GetComponent<Camera>();
+        InvokeRepeating("Update", 1.0f, 0.5f);
     }
 
     // Update is called once per frame

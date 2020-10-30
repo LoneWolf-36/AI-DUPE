@@ -55,6 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CAM_SCRIPTS\DEF_FP.cs" />
+     <Compile Include="Assets\CAM_SCRIPTS\FP.cs" />
+     <Compile Include="Assets\CAM_SCRIPTS\L_HEAD.cs" />
+     <Compile Include="Assets\CAM_SCRIPTS\L_MIR.cs" />
+     <Compile Include="Assets\CAM_SCRIPTS\R_HEAD.cs" />
+     <Compile Include="Assets\CAM_SCRIPTS\R_MIR.cs" />
+     <Compile Include="Assets\CAM_SCRIPTS\main_cam.cs" />
      <Compile Include="Assets\CarCamera\CarCam.cs" />
      <Compile Include="Assets\SR_RenderCamera.cs" />
      <Compile Include="Assets\Scripts\CAMREC.cs" />
@@ -62,7 +69,9 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Scripts\CarControl.cs" />
+     <Compile Include="Assets\Scripts\Excel.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\SPRITE.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
      <None Include="Assets\Environmental Race Track Pack\RaceTrackPack_Documentation.txt" />
  <Reference Include="UnityEngine">

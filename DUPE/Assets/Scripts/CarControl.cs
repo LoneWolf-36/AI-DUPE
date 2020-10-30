@@ -9,7 +9,7 @@ public class CarControl : MonoBehaviour
 
     public float horizontalInput;
     public float verticalInput;
-    public float currentSteerAngle;
+    public static float currentSteerAngle;
     public float currentbreakForce;
     public bool isBreaking;
 
@@ -27,7 +27,7 @@ public class CarControl : MonoBehaviour
     [SerializeField] public Transform rearLeftWheelTransform;
     [SerializeField] public Transform rearRightWheelTransform;
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         GetInput();
         HandleMotor();
@@ -36,14 +36,14 @@ public class CarControl : MonoBehaviour
     }
 
 
-    private void GetInput()
+    public void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
     }
 
-    private void HandleMotor()
+    public void HandleMotor()
     {
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce;
@@ -56,14 +56,14 @@ public class CarControl : MonoBehaviour
         rearRightWheelCollider.brakeTorque = currentbreakForce;
     }
 
-    private void HandleSteering()
+    public void HandleSteering()
     {
         currentSteerAngle = maxSteerAngle * horizontalInput;
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
 
-    private void UpdateWheels()
+    public void UpdateWheels()
     {
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
         UpdateSingleWheel(frontRightWheelCollider, frontRightWheeTransform);
@@ -71,11 +71,11 @@ public class CarControl : MonoBehaviour
         UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
     }
 
-    private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
+    public void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         Vector3 pos;
-        Quaternion rot
-; wheelCollider.GetWorldPose(out pos, out rot);
+        Quaternion rot; 
+        wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
